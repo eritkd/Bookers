@@ -16,7 +16,7 @@
 
 <td><%= link_to "Show",book_path(book.id) %></td>
 <td><%= link_to "Edit" ,edit_book_path(book.id) %></td>
-<td><%= link_to "Destroy",book_path(book.id),method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
+<td><%= link_to "Destroy",book_path(book.id),method: :delete, "data-confirm" => "Are you sure?" %></td>
 </tr>
 <% end %>
 </tbody>
@@ -27,7 +27,10 @@
 <br>
 
 <%= flash[:notice] %>
-<%= form_with model: @book do |f| %>
+
+
+
+<%= form_with model: @book,url:'/books',method: :post do |f| %>
 <span>Title</span><br>
 <%= f.text_field:title %><br>
 <br>

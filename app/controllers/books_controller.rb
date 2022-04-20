@@ -9,7 +9,7 @@ class BooksController < ApplicationController
       flash[:notice] = 'Book was successfully created.'
     redirect_to book_path(@book.id)
     else
-    render :new
+    render :index
     end
   end
 
@@ -31,7 +31,7 @@ class BooksController < ApplicationController
     flash[:notice] = 'Book was successfully created.'
     redirect_to book_path(book.id)
     else
-      render :new
+      render :index
     end
   end
   
@@ -45,7 +45,7 @@ class BooksController < ApplicationController
 private
 
 def book_params
-  params.require(:book).permit(:title,:body)
+  params.permit(:title,:body)
 end
 
 end
