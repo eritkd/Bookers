@@ -1,4 +1,5 @@
 <h1>Editing Book</h1>
+
 <%= flash[:notice] %>
 
 <% if @book.errors.any? %>
@@ -10,7 +11,8 @@
 </ul>
 <% end %>
 
-<%= form_with model:@book,url:update_book_path(@book.id),method: :patch do |f| %>
+<%= form_with model: @book,url:update_book_path(@book.id),method: :patch do |f| %>
+
 <span>Title</span><br>
 <%= f.text_field:title %><br><br>
 <span>Body</span><br>
